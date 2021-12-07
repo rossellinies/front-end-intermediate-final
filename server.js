@@ -14,8 +14,10 @@ const recipeControllers = require("./api/recipe.controllers");
 const app = express();
 
 const dataBaseURL = process.env.DATABASE || "mongodb://localhost:27017";
-// const dataBaseURL = "mongodb://localhost:27017"; // use the local docker database
-// const dataBaseURL = "mongodb+srv://daniel:dd2345@cluster0.bs2la.mongodb.net/recipes?retryWrites=true&w=majority"; // use the hosted database
+// use the local docker database
+// const dataBaseURL = "mongodb+srv://rossellinie:1q2w3e4r@cluster0.xuxvi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"; 
+// use the hosted database
+// const dataBaseURL = "mongodb+srv://daniel:dd2345@cluster0.bs2la.mongodb.net/recipes?retryWrites=true&w=majority";
 
 console.log("dataBaseURL::", dataBaseURL);
 
