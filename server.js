@@ -3,13 +3,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const fileUpload = require("express-fileupload");
 
-if (process.env.NODE_ENV === "production") {
-  // set static folder
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
+// if (process.env.NODE_ENV === "production") {
+//   // set static folder
+//   app.use(express.static("client/build"));
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//   });
+// }
 
 console.log("process.env.NODE_ENV = ", process.env.NODE_ENV);
 
@@ -31,7 +31,7 @@ mongoose
   .then(() => console.log("MongoDb connected"))
   .catch((err) => console.log(err));
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 app.use(express.json({ extended: false })); // for parsing application/json
 app.use(express.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
 app.use(fileUpload());
